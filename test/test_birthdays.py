@@ -20,3 +20,10 @@ def test_update_name():
     birthdays.adds_birthday('Sam', '1994/11/28')
     result = birthdays.updates_name("Maria","Majo")
     assert result == {'Majo': '2000/08/17','Sam': '1994/11/28'}
+
+def test_birthday_reminder():
+    birthdays = Birthdays()
+    birthdays.adds_birthday('Maria', '2000/08/17')
+    birthdays.adds_birthday('Sam', '1994/11/28')
+    result = birthdays.reminder('11')
+    assert result == {'Sam': '1994/11/28'}
