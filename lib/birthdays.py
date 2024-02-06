@@ -19,6 +19,13 @@ class Birthdays():
     def reminder(self, month):
         reminders = {}
         for name, date in self.birthdays.items():
-            if datetime.strptime(date,"%Y/%m/%d").strftime('%m') == month:
-                reminders[name] = date
+            dob = datetime.strptime(date,"%Y/%m/%d")
+            if dob.strftime('%B') == month:
+                age = self.calculate_age(dob)
+                reminders[name] = {"birthdate":date,"age":age}
         return reminders
+    
+    def calculate_age(self,birthdate):
+        today = datetime.today()
+        age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
+        return age

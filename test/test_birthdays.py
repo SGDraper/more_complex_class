@@ -25,5 +25,13 @@ def test_birthday_reminder():
     birthdays = Birthdays()
     birthdays.adds_birthday('Maria', '2000/08/17')
     birthdays.adds_birthday('Sam', '1994/11/28')
-    result = birthdays.reminder('11')
-    assert result == {'Sam': '1994/11/28'}
+    result = birthdays.reminder('November')
+    assert result == {'Sam':{"birthdate": "1994/11/28", "age" : 29}}
+
+# def test_get_ages():
+#     birthdays = Birthdays()
+#     birthdays.adds_birthday('Maria', '2000/08/17')
+#     birthdays.adds_birthday('Sam', '1994/11/28')
+#     result = birthdays.get_ages("November")
+#     assert result == {'Sam': '1994/11/28', "age" : "29"}
+    
