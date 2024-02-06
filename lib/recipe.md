@@ -35,7 +35,7 @@ class Birthdays():
 initiate empty dictionary
 
 
-    def add_birthday(self, name, date): 
+    def add_birthday(self, name, date, sent(boolean = false by default): 
 name = name of the person
 date = date of birth
 
@@ -56,6 +56,6 @@ returns the list of birthdays upcoming oin that month
     def get_ages(self, maybe month):
 returns dictionary with the ages of each person included (current age or upcoming age?)
 
-    def mark_sent(self, name, done)
+    def mark_sent(self, name, done(boolean))
 unsure 
 
